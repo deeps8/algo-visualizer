@@ -3,13 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path:'sorting',
-    loadChildren: ()=>import('./sorting/sorting.module').then(m=>m.SortingModule)
-  },
-  {
     path:'',
-    redirectTo:'sorting',
-    pathMatch:'full'
+    loadChildren: ()=>import('./sorting/sorting.module').then(m=>m.SortingModule)
   }
 ];
 

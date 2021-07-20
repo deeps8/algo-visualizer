@@ -31,7 +31,7 @@ export class AlgoService {
 
     this.volume = 30;
     this.synth.volume.value = -this.volume;
-
+    Tone.start();
   }
 
   // resizing array function used by slider
