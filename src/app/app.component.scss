@@ -1,0 +1,31 @@
+$prime : #d80757;
+$contrast : #11eaea;
+.header {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-bottom: 1px solid #1f1f1f;
+  .heading{
+    margin: 0;
+    font-size: 25px;
+    margin-right: auto;
+    padding: 5px;
+    color: $contrast;
+    text-shadow: 1px -1px 0px $prime;
+  }
+  .links{
+    display: flex;
+    flex-direction: row;
+    a{
+      margin: 7px 10px;
+      background: $prime;
+      padding: 5px 10px;
+      border-radius: 3px;
+      box-shadow: 2px 2px 0px $contrast;
+      text-decoration: none;
+      font-weight: 600;
+      color: white;
+      height: fit-content;
+    }
+  }
+}

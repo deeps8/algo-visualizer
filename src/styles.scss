@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+$prime : #d80757;
+$contrast : #11eaea;
+
+html,body{
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #141414;
+  color: #11eaea;
+
+  .slider {
+    -webkit-appearance: none;
+    height: 8px;
+    background: white;
+    outline: none;
+    border-radius: 2px;
+    width: 85%;
+  }
+
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 0px $prime;
+    background: $contrast;
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 0px $prime;
+    background: $contrast;
+    cursor: pointer;
+  }
+
+}

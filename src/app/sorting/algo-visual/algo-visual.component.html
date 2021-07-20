@@ -1,0 +1,33 @@
+<div class="algo-setting">
+  <div style="display: flex;margin-bottom: 15px;" >
+    <div class="sliders">
+      <p>Array Size</p>
+      <input class="slider" [disabled]="disable" type="range" #rsize name="size" [max]="sv.maxSize" min="5" step="2" [value]="sv.size" (change)="sv.resizeArray(rsize.value)">
+    </div>
+    <div class="sliders">
+      <p>Speed</p>
+      <input class="slider" type="range" #rtime name="time" max="190" min="10" step="5" value="100" (change)="sv.changeTime(rtime.value)" >
+    </div>
+    <div class="sliders">
+      <p>Volume</p>
+      <input class="slider volume" type="range" #vol name="volume" max="100" min="50" step="2" value="70" (change)="sv.changeVol(vol.value)" >
+    </div>
+  </div>
+  <div class="sort-btns">
+    <button class="new-array" (click)="sv.resizeArray(rsize.value)"  [disabled]="disable"  >New Array</button>
+    <button [ngClass]="{'active-btn': clicked==1}" (click)="sortAlgo(1)"  [disabled]="disable"  >Bubble Sort</button>
+    <button [ngClass]="{'active-btn': clicked==2}" (click)="sortAlgo(2)"  [disabled]="disable"  >Selection Sort</button>
+    <button [ngClass]="{'active-btn': clicked==3}" (click)="sortAlgo(3)"  [disabled]="disable"  >Insertion Sort</button>
+    <button [ngClass]="{'active-btn': clicked==4}" (click)="sortAlgo(4)"  [disabled]="disable"  >Merge Sort</button>
+    <button [ngClass]="{'active-btn': clicked==5}" (click)="sortAlgo(5)"  [disabled]="disable"  >Quick Sort</button>
+  </div>
+</div>
+<!-- <p class="algo" *ngIf="algo!=''" >{{algo}} : </p> -->
+<div class="array-block" [style.height]="sv.size*10+'px'" [style.width]="sv.size*16 + 'px'" >
+  <div class="array-element"
+  *ngFor="let a of sv.arr;let i=index;"
+  [id]="i"
+  [style.height] = "a*10+'px'"
+  [style.left]="i*16+'px'">
+  </div>
+</div>
