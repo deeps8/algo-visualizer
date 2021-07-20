@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "gh-pages -d dist\\algo-visualizer"
+    "deploy": "gh-pages -d dist\\Algo-Visual"
   },
   "private": true,
   "dependencies": {
@@ -19,7 +19,6 @@
     "@angular/platform-browser": "~12.0.5",
     "@angular/platform-browser-dynamic": "~12.0.5",
     "@angular/router": "~12.0.5",
-    "gh-pages": "^3.2.3",
     "midi-note": "^1.0.0",
     "rxjs": "~6.6.0",
     "tone": "^14.7.77",
@@ -32,6 +31,7 @@
     "@angular/compiler-cli": "~12.0.5",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "gh-pages": "^3.2.3",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
