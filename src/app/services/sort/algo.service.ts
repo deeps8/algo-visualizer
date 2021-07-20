@@ -31,7 +31,6 @@ export class AlgoService {
 
     this.volume = 30;
     this.synth.volume.value = -this.volume;
-    Tone.start();
   }
 
   // resizing array function used by slider
@@ -71,12 +70,18 @@ export class AlgoService {
   generateMusicNotes(j:number){
     var data = ['C','D','E','F','G','A','B'];
     let note = Math.floor(Math.random() * data.length);
+    Tone.start();
+    // const now = Tone.now();
+    // if(this.synth.context.state !== 'running'){
+      if(j%2==0 && this.synth.context.state!="suspended"){
+        this.synth.triggerAttackRelease(data[note]+'4',"16n");
+      }
+      // else{
+      //   this.synth.triggerAttackRelease(data[note]+'#'+String(note)+'4',"16n",now+1);
+      // }
 
-    if(j%2==0){
-      this.synth.triggerAttackRelease(data[note]+'4',"16n");
-    }else{
-      this.synth.triggerAttackRelease(data[note]+'#'+String(note)+'4',"16n");
-    }
+    // }
+
   }
 
   // 1 . Bubble sort
@@ -90,10 +95,10 @@ export class AlgoService {
 
         ddiv[j].style.background = 'white';
         ddiv[j+1].style.background = 'white';
-
-        await this.waitforme(10);
         //sound
         this.generateMusicNotes(j);
+        await this.waitforme(10);
+
 
         if (parseInt(ddiv[j].style.height) > parseInt(ddiv[j+1].style.height)) {
           let temp = ddiv[j].style.height;
@@ -127,7 +132,8 @@ export class AlgoService {
         for(let j = i+1; j < ele.length; j++){
             // Change color for the current comparision (in consideration for min_index)
             ele[j].style.background = 'white';
-
+            //sound
+            this.generateMusicNotes(j);
             await this.waitforme(10);
             if(parseInt(ele[j].style.height) < parseInt(ele[min_index].style.height)){
                 if(min_index !== i){
@@ -140,8 +146,7 @@ export class AlgoService {
                 // if the currnent comparision is more than min_index change is back to normal
                 ele[j].style.background = '#d80757';
             }
-            //sound
-            this.generateMusicNotes(j);
+
         }
         // await this.waitforme(10);
         this.swap(ele[min_index], ele[i]);
@@ -173,7 +178,6 @@ export class AlgoService {
             j--;
             //sound
             this.generateMusicNotes(j);
-
             await this.waitforme(100);
 
             // color
